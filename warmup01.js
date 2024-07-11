@@ -20,8 +20,8 @@ let MultipleOf13orNot = function() {
 const  AgeInSeconds = (age) =>  {
 
 }
- * 5 - Write a function sameLength that accepts two strings as arguments, and returns true if those strings have the same length, and false otherwise.
- */
+ //5 - Write a function sameLength that accepts two strings as arguments, and returns true if those strings have the same length, and false otherwise.
+ 
 const sameLength=(string1, string2)=> {
 }
 /**
@@ -58,7 +58,7 @@ const laugh= function (num){
  */
 
 let reverseArray = (array ) => 
-
+{
 
 /**
  * 10-Given an array of integers and an integer n.
@@ -71,8 +71,10 @@ let reverseArray = (array ) =>
  * @param {Array} array
  * @param {number} n
  * @return {Array}
- */
-let findAll = (arr,n) => {}
+ */}
+ 
+let findAll = (arr,n) => arr 
+{}
 
 
 // 6. write a function that takes a string as an argument
