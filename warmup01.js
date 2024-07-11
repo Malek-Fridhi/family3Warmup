@@ -3,13 +3,13 @@
 
 // function declaration
 function MyPartnerName(firstname, lastname) {
-	// return firstname+" "+lastname  
+	a=""
+	return firstname+" "+lastname 
 }
 
 
-let MultipleOf13orNot = function() {
+let MultipleOf13orNot=(number)=> number%13==0?console.log("true"):console.log("false");
 
-}
 
 
 
@@ -17,14 +17,18 @@ let MultipleOf13orNot = function() {
 
 // 4-create a function that takes a age as a parametre and return that age in seconds.*//
 
-const  AgeInSeconds = (age) =>  {
+const  AgeInSeconds = (age) => "age=" + " " +age*31536000 
 
-}
  //5 - Write a function sameLength that accepts two strings as arguments, and returns true if those strings have the same length, and false otherwise.
  
 const sameLength=(string1, string2)=> {
+	let i=0;
+	while(string1.length==string2.length){
+		return true
+	}
+	return false
 }
-/**
+/** 
  *? 6 - Write a function called (reverseStr) that takes a string as an input and returns the reverse of each letter
  *? followed by a number starting from zero(solve it using while loop).
  *? example:    reverseStr('hello'); "o0l1l2e3h4"
@@ -33,8 +37,16 @@ const sameLength=(string1, string2)=> {
  * @return {string}
  */
 
-let reverseStr = function (str){
-}
+let reverseStr = (str) => 
+{
+	let i = 0;
+	let result = "";
+	while (i < str.length)
+		for (let j = str.length - 1; j >= 0; j--){
+		result += str[j] + i;
+		i++;
+	}
+return result}
 /**
 // * 7 Write a function called laugh() that takes one parameter,
 // * num that represents the number of "ha"s to return.
@@ -45,7 +57,11 @@ let reverseStr = function (str){
  * @return {string}
  */
 const laugh= function (num){
-
+	let str="ha"
+for(i=1;i<num;i++){
+	str+="ha"
+}
+return str
 }
 
 
@@ -73,8 +89,16 @@ let reverseArray = (array ) =>
  * @return {Array}
  */}
  
-let findAll = (arr,n) => arr 
-{}
+let findAll = (arr,n) =>  
+{
+	let a =[]
+	let j=0
+	for(let i=0;i<arr.length;i++){
+		if(arr[i]==n){
+		a[j]=i	
+		j++
+	}}
+return a}
 
 
 // 6. write a function that takes a string as an argument
@@ -85,5 +109,13 @@ let findAll = (arr,n) => arr
 // Note : you can`t use any built-in functions .
 
 let reverseWord=(string) => {
-
+	let a=[]
+ for(let i=string.length-1;i>=0;i--){
+	if(string[i]!==" "){
+		a.push(string[i])
+	}
+	else{
+		a.push(string[i])
+	}
+ }
 }
