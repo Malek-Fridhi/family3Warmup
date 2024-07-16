@@ -5,7 +5,14 @@
  * counting(3); // => '1, 2, 3'
  */
 
-let countring = (number) => 
+let countring = (number) => {
+  let res = "";
+  for (let i = 1; i <= number; i++) {
+    res += i + ", ";
+  }
+  return res;
+
+}
 
 
 /**
@@ -14,10 +21,19 @@ let countring = (number) =>
  * @return {any}
  */
 
- flet midElement =function (array) {
+ let midElement =(array) =>{
+    let a =""
+    let b =1;
+    if (array.length%2!==0){
+      b=((array.length-1)/2)+0.5}
+    else {
+        b=((array.length-1)/2)
+    }
+    a = array[b];
+    return a ;
    
+ }
 
-}
 
 /**
  * 4 - write a function called (sameLength) that takes array of strings and returns an array of the strings that have the same length
@@ -29,7 +45,18 @@ let countring = (number) =>
 
   
 let sameLength =function (array) {
-  
+  let res=[]
+  let a=""
+  for(let i=0;i<array.length;i++){
+    a=array[i]
+    let j=i+1;
+    for (j;j<array.length;j++){
+        if (a.length==array[j].length){
+            res.push(a)
+        }
+    }
+  } 
+  return res;
 }
 
 /**
@@ -47,7 +74,13 @@ let sameLength =function (array) {
 
 
  let findAll = function (array, n) {
-   
+   let res =[];
+   for (let i=0;i<array.length;i++){
+       if (array[i]==n){
+           res.push(i)
+       }
+   }
+   return res
 };
 
 // 6. write a function that takes a string as an argument
@@ -90,4 +123,4 @@ let objKey=(object)=>{
  * @param {Object} obj
  * @return number
  */
-let objLength=(obj) =>
+let objLength=(obj) => {}
