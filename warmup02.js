@@ -13,6 +13,8 @@ let countring = (number) => {
   return res;
 
 }
+let countring1  = (number) => Array.from({ length: number }, (_, i) => i + 1).join(', ');
+
 
 
 /**
@@ -52,7 +54,8 @@ let sameLength =function (array) {
     let j=i+1;
     for (j;j<array.length;j++){
         if (a.length==array[j].length){
-            res.push(a)
+            res.push(a);
+                
         }
     }
   } 
