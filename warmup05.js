@@ -8,7 +8,20 @@ myCount.counter => 1
 **/ 
 
 let Counter = () => {
-  
+    let count = 0;
+    return {
+        up: () => {
+            count++;
+            return count;
+        },
+        down: () => {
+            count--;
+            return count;
+        },
+        get counter() {
+            return count;
+        },
+    };
 }
 
 
@@ -16,12 +29,21 @@ let Counter = () => {
 
 
 function findPower(base, exponent) {
+    let res = 1;
+    for (let i = 0; i < exponent; i++) {
+        res *= base;
+    }
+    return res;
 }
 
 //3.Write a function to print all the even numbers befor the given parameter.
 
 function printEven(num) {
-  
+    for (let i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+            console.log(i);
+        }
+    }
 }
 
 /**
@@ -55,7 +77,18 @@ function printEven(num) {
  * Output: "thousand"
  * explanation: "thousand" is the longest word in the sentence.
  */
-let FindingTheLongestWord = (str) => {}
+let FindingTheLongestWord = (str) => {
+    let arr = str.split(" ");
+    let max = 0;
+    let index = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length > max) {
+            max = arr[i].length;
+            index = i;
+        }
+    }
+    return arr[index];
+}
 /**
  * 5-Title: Sum of Array Pairs
  * 
@@ -88,7 +121,16 @@ let FindingTheLongestWord = (str) => {}
  * Output: []
  * explanation: There are no pairs that add up to the target sum of 10.
  */
-let  SumofArrayPairs => (array) => {}
+let  SumofArrayPairs =(array) => {
+    let pairs = [];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] + array[j] === target) {
+                pairs.push([array[i], array[j]]);
+            }
+        }
+    }
+}
 
 /**
  * 6-Title: Palindrome Checker
@@ -123,7 +165,13 @@ let  SumofArrayPairs => (array) => {}
  * explanation: Ignoring spaces, punctuation, and capitalization, the string reads the same backward as forward.
 
  */
-let  PalindromeChecker => (str) => {}
+let  PalindromeChecker = (str) => {
+    let reversed = str.split("").reverse().join("");
+    if (str === reversed) {
+        return true;
+    }
+    return false;
+}
 /**
  * 7-Title: Climbing the Fibonacci Stairs
  * 
@@ -167,5 +215,8 @@ let  PalindromeChecker => (str) => {}
  * explanation: There are 8 ways to climb 5 steps: (1+1+1+1+1), (1+1+1+2), (1+1+2+1), (1+2+1+1), (2+1+1+1), (2+2+1), (2+1+2), or (1+2+2).
  * 
  */
-let  Climbing = (n) => {}
+let  Climbing = (n) => {
+    if (n === 0 || n === 1) return 1;
+    return Climbing(n - 1) + Climbing(n - 2);
+}
 
